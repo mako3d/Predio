@@ -1,0 +1,93 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <tab name="Init" type="InitTab" active="false" scrollx="66.99999999999977" scrolly="-135.00000000000006" scale="0.9">
+    <block xmlns="https://developers.google.com/blockly/xml" type="initSettings" id="Fi2ie|0BhM3/87y.~/SA" x="490" y="150">
+      <field name="LOAD_COMP_ASSETS">FALSE</field>
+      <field name="FULLSCREEN">TRUE</field>
+      <field name="BKG_TRANSPARENCY">FALSE</field>
+      <field name="PRESERVE_DRAW_BUF">FALSE</field>
+      <field name="FADE_ANNOTATIONS">TRUE</field>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="checkPerformance" id="drEsS+8rmV1fPCd8G}KQ" x="210" y="450">
+      <statement name="DO_HIGH">
+        <block type="comment" id="i+1dgFAzeR!sUK,mQ/|p">
+          <field name="TEXT">Increase rendering quality for powerful devices with Retina displays</field>
+          <next>
+            <block type="controls_if" id="k7G*Yh7C+6NJDDWUb-J1">
+              <value name="IF0">
+                <block type="featureAvailable" id="zLLloaCp@+P6)xSRJmX+">
+                  <field name="FEATURE">RETINA</field>
+                </block>
+              </value>
+              <statement name="DO0">
+                <block type="setScreenScale" id="vCJk4HJ_.d|GhKuIVS7^">
+                  <value name="FACTOR">
+                    <shadow type="math_number" id="t6V*pyT/,T1%|cZk%05{">
+                      <field name="NUM">1.5</field>
+                    </shadow>
+                  </value>
+                </block>
+              </statement>
+            </block>
+          </next>
+        </block>
+      </statement>
+      <statement name="DO_LOW">
+        <block type="comment" id="UxPX}oN@1MHx.Xkh[5-N">
+          <field name="TEXT">Perform aggressive optimizations for poor devices</field>
+          <next>
+            <block type="removePostprocessing" id="O(NQLTMH(~2e`v,4M|f?">
+              <field name="MODE">ALL</field>
+              <next>
+                <block type="setLightParam" id="Ub9=w%C3JfKTHl+2;g$o">
+                  <mutation xmlns="http://www.w3.org/1999/xhtml" type="USE_SHADOW"></mutation>
+                  <field name="TYPE">USE_SHADOW</field>
+                  <value name="PARAM">
+                    <block type="logic_boolean" id="HNF(x`G!Gngo;QA49{om">
+                      <field name="BOOL">FALSE</field>
+                    </block>
+                  </value>
+                  <value name="OBJECT">
+                    <shadow type="objectList" id="lu!RLuw%`98$G_/x^od`">
+                      <field name="FIELDNAME">&lt;none&gt;</field>
+                    </shadow>
+                    <block type="getObjectsFrom" id="s^atX}O84(E5WD89jvK(">
+                      <field name="TYPE">LIGHT</field>
+                      <value name="OBJ">
+                        <block type="allObjectList" id="ySX_u$=8)8(6N!5#Xs[U"></block>
+                      </value>
+                    </block>
+                  </value>
+                </block>
+              </next>
+            </block>
+          </next>
+        </block>
+      </statement>
+    </block>
+  </tab>
+  <tab name="New Tab" type="CommonTab" active="true" scrollx="18.823073309822348" scrolly="148.2772271537242" scale="0.9999999999999996">
+    <block xmlns="https://developers.google.com/blockly/xml" type="brightnessContrast" id="YTQ|4ST0c/eW?qz#K6PU" x="250" y="50">
+      <value name="BRIGHTNESS">
+        <shadow type="number_slider" id="@yUjL_fMj[8N-t+E.}ZD">
+          <field name="NUM" min="-5" max="5" step="0.1">0</field>
+        </shadow>
+      </value>
+      <value name="CONTRAST">
+        <shadow type="number_slider" id="@#-XlI;1PHraUL_Qe:y)">
+          <field name="NUM" min="-1" max="1" step="0.1">0.05</field>
+        </shadow>
+      </value>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="playAnimationAdv" id="qFr(@ZQ^4|_{~|.uE5%l" x="330" y="150">
+      <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="false" enablewhenfinished="false"></mutation>
+      <field name="REVERSED">FALSE</field>
+      <field name="LOOP">LoopRepeat</field>
+      <value name="VALUE">
+        <shadow type="animationList" id="R[VPGc^MSM0T,PGf6,j.">
+          <field name="FIELDNAME">Armature</field>
+        </shadow>
+      </value>
+    </block>
+  </tab>
+  <editorsettings viewport-x="1134" viewport-y="37" viewport-w="768" viewport-h="461.5" viewport-hidden="false" toolbox-library-mode="false" toolbox-minimized-mode="false"></editorsettings>
+</xml>
